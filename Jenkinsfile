@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     app = docker.build("coffeelover/train-schedule")
-                    app.inside {:
+                    app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
                 }
